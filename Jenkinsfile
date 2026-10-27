@@ -4,14 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: https://github.com/stuckedinthe-loop/html-form-jenkins
+                git branch: 'main', url: 'https://github.com/stuckedinthe-loop/html-form-jenkins.git'
             }
         }
 
         stage('Test HTML Form') {
             steps {
-                sh 'python3 test_form.py'
+                bat 'python test_form.py'
             }
         }
     }
